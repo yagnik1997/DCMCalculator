@@ -1,12 +1,16 @@
 package com.pcs.dcmcalculator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
@@ -82,9 +86,10 @@ public class MainActivity extends AppCompatActivity {
 
         DecimalFormat df = new DecimalFormat("#.###");
         df.setRoundingMode(RoundingMode.CEILING);
+
+        //Calculate after decimal
         for (double x : Util.values_dec) {
             if (decimal_temp < x || decimal_temp == 0.0) continue;
-//            double t = (x == 0.005) ? x : x + 1.000;
             double t =  x + 1.000;
             result.add(t);
             total += t;
@@ -92,13 +97,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         double temp = Double.valueOf(input) - total;
+        //Calculate before decimal
         for (double x : Util.values_int) {
             if (temp < x) continue;
             result.add(x);
             temp -= x;
         }
 
-//      Print Result
+        //Print Result
         printResult();
     }
 
@@ -118,5 +124,21 @@ public class MainActivity extends AppCompatActivity {
         }
         txtValue.setText(textOutput);
         Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.omenu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.mnuSinCalc:
+                startActivity(new Intent(this,SinCalculator.class));
+                finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
