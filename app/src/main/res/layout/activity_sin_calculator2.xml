@@ -2,16 +2,18 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/bgColor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D1D1D1"
     android:padding="10dp"
     tools:context=".SinCalculator">
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5F5F5"
+        android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,6 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
+                style="@style/editText"
                 android:gravity="center_horizontal"
                 android:inputType="numberDecimal"
                 android:text="150" />
@@ -70,6 +73,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
+                    style="@style/editText"
                     android:gravity="center_horizontal"
                     android:inputType="numberDecimal" />
 
@@ -78,9 +82,9 @@
                     style="@style/textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:digits="0123456789"
                     android:ems="10"
                     android:gravity="center_horizontal"
-                    android:digits="0123456789"
                     android:inputType="number"
                     android:text="Degree" />
             </LinearLayout>
@@ -97,6 +101,7 @@
                     android:layout_height="wrap_content"
                     android:digits="0123456789"
                     android:ems="10"
+                    style="@style/editText"
                     android:gravity="center_horizontal"
                     android:inputType="number" />
 
@@ -122,6 +127,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
+                    style="@style/editText"
                     android:gravity="center_horizontal"
                     android:inputType="numberDecimal" />
 
@@ -159,6 +165,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
+                style="@style/editText"
                 android:gravity="center_horizontal"
                 android:inputType="numberDecimal" />
 
@@ -166,11 +173,13 @@
 
         <Button
             android:id="@+id/btnCalHeight"
+            style="@style/btnStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:onClick="btnClickCalculateHeight"
-            android:text="Calculate Height" />
+            android:text="@string/calculate_height"
+            android:textColor="#FDF8F8" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

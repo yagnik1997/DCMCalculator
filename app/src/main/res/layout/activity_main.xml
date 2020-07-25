@@ -2,20 +2,25 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#D1D1D1"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/bgColor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:padding="10dp">
 
         <TextView
             android:id="@+id/textView"
+            style="@style/textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Enter Value"
+            android:text="@string/enter_value"
             android:textSize="22sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -26,6 +31,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ems="10"
+            style="@style/editText"
             android:inputType="numberDecimal"
             app:layout_constraintEnd_toStartOf="@+id/btnGo"
             app:layout_constraintStart_toStartOf="parent"
@@ -33,11 +39,12 @@
 
         <TextView
             android:id="@+id/txtResult"
+            style="@style/textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="end"
             android:padding="5dp"
-            android:text="Result Goes Here"
+            android:text="@string/result_goes_here"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,12 +52,18 @@
 
         <Button
             android:id="@+id/btnGo"
+            style="@style/btnStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:hapticFeedbackEnabled="true"
             android:onClick="findValues"
             android:text="Go"
+            android:textColor="#FDF8F8"
+            app:layout_constraintBottom_toTopOf="@+id/txtResult"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintStart_toEndOf="@+id/edtSize"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.25" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
