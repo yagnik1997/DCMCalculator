@@ -6,8 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D1D1D1"
-    android:padding="10dp"
     tools:context=".SinCalculator">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="420dp"
+        android:layout_height="752dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img1" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,11 +47,11 @@
 
             <EditText
                 android:id="@+id/edtLength"
+                style="@style/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                style="@style/editText"
                 android:gravity="center_horizontal"
                 android:inputType="numberDecimal"
                 android:text="150" />
@@ -70,10 +80,10 @@
 
                 <EditText
                     android:id="@+id/edtDegree"
+                    style="@style/editText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    style="@style/editText"
                     android:gravity="center_horizontal"
                     android:inputType="numberDecimal" />
 
@@ -97,11 +107,11 @@
 
                 <EditText
                     android:id="@+id/edtMinute"
+                    style="@style/editText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:digits="0123456789"
                     android:ems="10"
-                    style="@style/editText"
                     android:gravity="center_horizontal"
                     android:inputType="number" />
 
@@ -124,10 +134,10 @@
 
                 <EditText
                     android:id="@+id/edtSecond"
+                    style="@style/editText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    style="@style/editText"
                     android:gravity="center_horizontal"
                     android:inputType="numberDecimal" />
 
@@ -161,11 +171,11 @@
 
             <EditText
                 android:id="@+id/edtHeight"
+                style="@style/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                style="@style/editText"
                 android:gravity="center_horizontal"
                 android:inputType="numberDecimal" />
 
@@ -179,7 +189,8 @@
             android:layout_marginTop="20dp"
             android:onClick="btnClickCalculateHeight"
             android:text="@string/calculate_height"
-            android:textColor="#FDF8F8" />
+            android:textColor="#FDF8F8"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
